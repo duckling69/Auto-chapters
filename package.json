@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/duckling69/Auto-chapters#readme",
   "dependencies": {
-    "axios": "^1.7.2"
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12",
+    "openai": "^4.49.1"
   }
 }
