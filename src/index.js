@@ -1,6 +1,12 @@
 import axios from 'axios'
 import cheerio from 'cheerio'
 import fs from 'fs'
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+    organization: "org-jRDbZL5pu4CpIfPRG4meum6V",
+    project: process.env.PROJECT_ID,
+});
 
 function parseHtmlEntities(str) {
    return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
@@ -41,9 +47,13 @@ async function getTranscript(videoId){
 
     }else{
        console.log("caption not found");
-    }
-    
-    
-    
+    }  
 }
-getTranscript('WVOiDcFUg_I')
+
+async function summarizeTranscript(transcript){
+   const response = await openai.create
+
+}
+
+
+getTranscript('WVOiDcFUg_I').then(summarizeTranscript);
